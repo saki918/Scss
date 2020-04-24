@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/* 部分テンプレートの読み込み */
+/* 変数の設定 $変数名: プロパティの値; */
+/* 引数の設定それぞれの変数先で引数を変えることが出来る
+	 @mixin mixin名 {コード名}
+	 @mixinはいくつかのコードを1つにまとめて、複数箇所で簡単に呼び出すことができる機能です */
+body {
+  min-width: 700px;
+  text-align: center;
+  font-family: "Hiragino Kaku Gothic ProN";
+  background-color: #f0f5fc;
+}
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  display: inline-block;
+  background-color: #7579a3;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.profile {
+  padding: 56px 0;
+  margin: 0 auto 32px;
+  background-color: #ffffff;
+}
+
+.profile .info {
+  margin-top: 16px;
+  /* scssの入れ子構造
+		   このpは.profileの中の.infoの中のpを表す */
+}
+
+.profile .info p {
+  color: #2b546a;
+}
+
+.html {
+  /* @mixinで作成したmixinを@includeで呼び出す。
+	   引数を記述した場合は必ず入力 */
+  padding: 40px 28px;
+  margin: 16px 8px;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #1bd7cf;
+}
+
+.html img {
+  margin: 16px auto 20px;
+  display: block;
+}
+
+.html a {
+  padding: 16px 32px;
+  background-color: #ffffff;
+  border-radius: 26px;
+  display: inline-block;
+  color: #1bd7cf;
+  /* &記号はその前と同じセレクタを使用するときに
+			 そのセレクタの入れ子構造の中に入れることで
+			 適用される。 */
+}
+
+.html a:hover {
+  color: #ffffff;
+  /* 色を暗くする関数 */
+  background-color: #15aaa3;
+}
+
+.html h4 {
+  color: #107c78;
+}
+
+.javascript {
+  padding: 40px 28px;
+  margin: 16px 8px;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #ffe400;
+}
+
+.javascript img {
+  margin: 16px auto 20px;
+  display: block;
+}
+
+.javascript a {
+  padding: 16px 32px;
+  background-color: #ffffff;
+  border-radius: 26px;
+  display: inline-block;
+  color: #ffe400;
+  /* &記号はその前と同じセレクタを使用するときに
+			 そのセレクタの入れ子構造の中に入れることで
+			 適用される。 */
+}
+
+.javascript a:hover {
+  color: #ffffff;
+  /* 色を暗くする関数 */
+  background-color: #ccb600;
+}
+
+.javascript h4 {
+  color: #998900;
+}
+
+/* .rubyを作成し.htmlと.javascriptと同じようにスタイルを適用してください */
+.ruby {
+  padding: 40px 28px;
+  margin: 16px 8px;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #ff768a;
+}
+
+.ruby img {
+  margin: 16px auto 20px;
+  display: block;
+}
+
+.ruby a {
+  padding: 16px 32px;
+  background-color: #ffffff;
+  border-radius: 26px;
+  display: inline-block;
+  color: #ff768a;
+  /* &記号はその前と同じセレクタを使用するときに
+			 そのセレクタの入れ子構造の中に入れることで
+			 適用される。 */
+}
+
+.ruby a:hover {
+  color: #ffffff;
+  /* 色を暗くする関数 */
+  background-color: #ff435e;
+}
+
+.ruby h4 {
+  color: #ff1033;
+}
+
+footer {
+  margin: 100px 0 32px;
+  color: #2b546a;
+  font-size: 14px;
+  text-align: center;
+}
+/*# sourceMappingURL=stylesheet.css.map */
