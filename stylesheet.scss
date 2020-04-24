@@ -1,0 +1,89 @@
+/* 部分テンプレートの読み込み */
+@import "variables";
+
+/* 引数の設定それぞれの変数先で引数を変えることが出来る
+	 @mixin mixin名 {コード名}
+	 @mixinはいくつかのコードを1つにまとめて、複数箇所で簡単に呼び出すことができる機能です */
+@mixin card($color) {
+  padding: 40px 28px;
+	margin: 16px 8px;
+	display: inline-block;
+	border-radius: 3px;
+	background-color: $color;
+	img {
+		margin: 16px auto 20px;
+		display: block;
+	}
+	a {
+	  padding: 16px 32px;
+		background-color: #ffffff;
+		border-radius: 26px;
+		display: inline-block;
+		color: $color;
+		/* &記号はその前と同じセレクタを使用するときに
+			 そのセレクタの入れ子構造の中に入れることで
+			 適用される。 */
+		&:hover {
+			color: #ffffff;
+			/* 色を暗くする関数 */
+			background-color: darken($color, 10%);
+		}
+	}
+	h4 {
+	  color: darken($color, 20%);
+	}
+}
+
+body {
+  min-width: 700px;
+	text-align: center;
+	font-family: "Hiragino Kaku Gothic ProN";
+	background-color: #f0f5fc;
+}
+
+header {
+	width: 100%;
+	padding: 10px 0;
+	display: inline-block;
+	background-color: #7579a3;
+	color: #ffffff;
+	font-size: 14px;
+	text-align: center;
+}
+
+.profile {
+	padding: 56px 0;
+	margin: 0 auto 32px;
+	background-color: #ffffff;
+	.info {
+		margin-top: 16px;
+		/* scssの入れ子構造
+		   このpは.profileの中の.infoの中のpを表す */
+		p {
+			color: #2b546a;
+		}
+	}
+}
+
+.html {
+	/* @mixinで作成したmixinを@includeで呼び出す。
+	   引数を記述した場合は必ず入力 */
+  @include card($html);
+}
+
+.javascript {
+  @include card($javascript);
+}
+
+/* .rubyを作成し.htmlと.javascriptと同じようにスタイルを適用してください */
+.ruby {
+  @include card($ruby);
+}
+
+
+footer {
+	margin: 100px 0 32px;
+	color: #2b546a;
+	font-size: 14px;
+	text-align: center;
+}
